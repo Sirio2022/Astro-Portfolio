@@ -2,12 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import EmailIcon from '../components/icons/Email.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
-<Layout title="Juan Manuel Alvarez - Portfolio">
+<Layout 
+	title="Portfolio - Juan Manuel Alvarez - Desarrollador y Programador Web"
+	description="Contrata a Juan Manuel Alvarez como Desarrollador y Programador Web."
+>
 	<main>
 
 		<section class="w-full lg:w-[840px] mx-auto py-44">
+
+			<img src="/public/Foto Hoja de Vida.jpeg" alt="JuanMa photo" class="rounded-full size-12 mb-4">
+
 		<h1 class="text-5xl font-bold flex flex-row gap-5 pb-6 gap-x-4">
 			Hey, I'm Juan Manuel Alvarez
 
@@ -21,12 +31,28 @@ import Badge from '../components/Badge.astro';
 		</h1>
 
 		<h2 class="text-xl opacity-80">
-			I'm a software developer from Medellín Colombia. I love to build things for the web.
+			I'm a FullStack developer from Medellín Colombia. I love to build applications that solve problems and make people's lives easier. 
 		</h2>
 
-		<ul>
+		<nav class="flex gap-x-4 mt-10">
+		
+			<SocialPill href="https://www.linkedin.com/in/juanmanuelalvarezb/">
+				<LinkedInIcon class="size-6" />
+				LinkedIn
+			</SocialPill>
+		
+			<SocialPill href="https://github.com/Sirio2022">
+				<GitHubIcon class="size-6" />
+				GitHub
+			</SocialPill>
 
-		</ul>
+			<SocialPill href="https://github.com/Sirio2022">
+				<EmailIcon class="size-6" />
+				jalvar49@eafit.edu.co
+			</SocialPill>
+					
+
+		</nav>
 		</section>
 	</main>
 </Layout>
