@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import EmailIcon from '../components/icons/Email.astro';
 import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
+import Laptop from '../components/icons/Laptop.astro';
 ---
 
 <Layout 
@@ -14,7 +16,7 @@ import SocialPill from '../components/SocialPill.astro';
 >
 	<main>
 
-		<section class="w-full lg:w-[840px] mx-auto py-44">
+		<SectionContainer class="py-44 pb-12">
 
 			<img src="/public/Foto Hoja de Vida.jpeg" alt="JuanMa photo" class="rounded-full size-12 mb-4">
 
@@ -53,7 +55,15 @@ import SocialPill from '../components/SocialPill.astro';
 					
 
 		</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-bold mb-6 flex gap-2 items-center ">
+				Experience
+				<Laptop class="size-8" />
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
 
