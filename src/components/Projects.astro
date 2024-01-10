@@ -1,5 +1,64 @@
 ---
 
+import React from './icons/React.astro'
+import Tailwind from './icons/TailwindCSS.astro'
+import Redux from './icons/Redux.astro'
+import SocketIO from './icons/SocketIO.astro'
+import Node from './icons/Node.astro'
+import Express from './icons/ExpressJS.astro'
+import Mongo from './icons/Mongo.astro'
+import Html from './icons/Html.astro'
+import Css from './icons/Css.astro'
+import Javascript from './icons/Javascript.astro'
+
+const TAGS = {
+    REACT: {
+        name: 'REACT',
+        class: 'bg-blue-500 text-white',
+        icon: React,
+    },
+    TAILWIND: {
+        name: 'TAILWIND',
+        class: 'bg-blue-500 text-white',
+        icon: Tailwind,
+    },
+    REDUX: {
+        name: 'REDUX',
+        class: 'bg-purple-500 text-white',
+        icon: Redux,
+    },
+    SOCKETIO: {
+        name: 'SOCKETIO',
+        class: 'bg-black text-white',
+        icon: SocketIO,
+    },
+    NODEJS: {
+        name: 'NODEJS',
+        class: 'bg-green-500 text-white',
+        icon: Node,
+    },
+    EXPRESS: {
+        name: 'EXPRESS',
+        class: 'bg-white text-black',
+        icon: Express,
+    },
+    MONGODB: {
+        name: 'MONGODB',
+        class: 'bg-green-500 text-white',
+        icon: Mongo,
+    },
+   
+    JAVASCRIPT: {
+        name: 'JAVASCRIPT',
+        class: 'bg-yellow-500 text-white',
+        icon: Javascript,
+    },
+}   
+
+
+
+
+
 const PROJECTS = [
     {
         title: 'upTask - MERN',
@@ -7,7 +66,7 @@ const PROJECTS = [
         link: 'https://www.google.com',
         github: 'https://www.github.com',
         image: '/public/projects/upTask.webp',
-        tags: ['React', 'Redux ToolKit', 'SocketIO', 'NodeJS', 'Express', 'MongoDB', 'JWT', 'TailWindCSS', 'Mongoose'],
+        tags: [TAGS.REACT, TAGS.REDUX, TAGS.SOCKETIO, TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB, TAGS.TAILWIND, TAGS.JAVASCRIPT],
     },
 ]
 
@@ -18,9 +77,16 @@ const PROJECTS = [
         <article>
             <h3 class="text-2xl font-semibold text-indigo-400 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul>
+            <ul class="flex gap-x-2 flex-row mb-4">
                 {tags.map(tag => (
-                    <li>{tag}</li>
+                    
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs py-1 px-3 items-center ${tag.class}`}>
+                        <tag.icon class="size-6"/>
+                        {tag.name}
+                        </span>
+                        
+                    </li>
                 ))}    
             </ul>
 
